@@ -109,7 +109,7 @@ class FriendsController:
     def accept_friend_request(self):
         with transaction.atomic():
             try:
-                self.result = update_friend_request(self.user_id, self.request.data["friend_id"], Status.pending,
+                self.result = update_friend_request(self.user_id, self.friend_id, Status.pending,
                                                     Status.accepted)
             except Exception as e:
                 transaction.set_rollback(True)
@@ -120,7 +120,7 @@ class FriendsController:
     def reject_friend_request(self):
         with transaction.atomic():
             try:
-                self.result = update_friend_request(self.user_id, self.request.data["friend_id"], Status.pending,
+                self.result = update_friend_request(self.user_id, self.friend_id, Status.pending,
                                                     Status.rejected)
             except Exception as e:
                 transaction.set_rollback(True)
