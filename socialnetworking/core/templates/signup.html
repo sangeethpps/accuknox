@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block body %}
+
+    <div class="row">
+            <div class="mx-auto col-10 col-md-8 col-lg-6">
+                {% if exceptions %}
+                     <p style="color: red">{{ exceptions }}</p>
+                {% endif %}
+                <form method="post">
+                     {% csrf_token %}
+                 <div class="form-group">
+              <label class="col-form-label" for="email">Email:</label>
+              <input
+                type="email"
+                class="form-control email"
+                id="email"
+                placeholder=""
+                name="username"
+              />
+            </div>
+                     <div class="form-group">
+              <label class="col-form-label" for="email">Password:</label>
+              <input
+                type="password"
+                class="form-control password"
+                id="password1"
+                placeholder=""
+                name="password1"
+              />
+            </div>
+                     <div class="form-group">
+              <label class="col-form-label" for="email">Verify Password:</label>
+              <input
+                type="password"
+                class="form-control password"
+                id="password2"
+                placeholder=""
+                name="password2"
+              />
+            </div>
+                     <div class="mt-2 text-center">
+                         <button type="submit" class="btn btn-primary">Sign Up</button>
+                     </div>
+                     <div class="mt-2 text-center">
+                         Already have a account <a href="/core/login/">Sign In</a>
+                     </div>
+</form>
+            </div>
+
+        </div>
+{% endblock %}
