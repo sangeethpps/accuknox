@@ -1,0 +1,9 @@
+/core/migrations/
+# Environments
+
+.idea/
+*.pyc
+
+assets/*
+*.iml
+misc.xml
